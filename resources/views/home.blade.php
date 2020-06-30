@@ -15,6 +15,18 @@
                     @endif
 
                     You are logged in!
+
+                    @can('administrador')
+                        <div>
+                            <a href="#">Só aparece para usuário administrador</a>
+                        </div>
+                    @endcan
+
+                    @can('normal')
+                        <div>
+                            <a href="#">Só aparece para usuário normal</a>
+                        </div>
+                    @endcan
                 </div>
             </div>
         </div>

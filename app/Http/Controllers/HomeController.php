@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Gate;
+
 class HomeController extends Controller
 {
     /**
@@ -33,13 +35,25 @@ class HomeController extends Controller
 
         //dd($userId);
 
-        if(Auth::check()){
-            echo("Autenticado");
-        }
-        else{
-            echo("Não Autenticado");
-        }
+        // if(Auth::check()){
+        //     echo("Autenticado");
+        // }
+        // else{
+        //     echo("Não Autenticado");
+        // }
 
-        //return view('home');
+        // if(Gate::allows('administrador')){
+        //     echo("Autorizado para usuario do tipo administrador");
+        // }
+
+        // if(Gate::allows('normal')){
+        //     echo("Autorizado para usuario do tipo normal.");
+        // }
+
+        // if(Gate::authorize('normal')){
+        //     echo("Autorizado para usuario do tipo administrador");
+        // }
+
+        return view('home');
     }
 }
